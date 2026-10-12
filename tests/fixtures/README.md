@@ -6,7 +6,7 @@ Real pages, recorded September 25, 2026 (one, the Kansas City page of March 6, 2
 
 **Inputs:** a GET of the URL each name spells.
 
-**Terms:** the repository's MIT license covers code, not these pages; the [dataset card](https://huggingface.co/datasets/incrediblecrab/federal-reserve-beige-book) quotes each site's terms.
+**Terms:** the repository's MIT license covers code, not these pages; the [dataset card](https://huggingface.co/datasets/incrediblecrab/us-federal-reserve-beige-book) quotes each site's terms.
 
 **Files:**
 

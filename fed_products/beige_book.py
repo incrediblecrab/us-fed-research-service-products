@@ -16,7 +16,7 @@ from . import board, minneapolis
 from .http import PageMissing
 from .sections import STANDARD, district_number, rank
 
-REPO_ID = "incrediblecrab/federal-reserve-beige-book"
+REPO_ID = "incrediblecrab/us-federal-reserve-beige-book"
 SCHEMA = pa.schema([
     ("id", pa.string()),
     ("edition", pa.string()),
