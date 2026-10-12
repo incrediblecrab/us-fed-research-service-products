@@ -1,6 +1,6 @@
 # workflows
 
-**Objective:** keep the dataset current with no personal device and no person, given a commit every 60 days. The workflow is scheduled at 00:00 and 12:00 UTC, and GitHub starts some runs late or [drops them](https://huggingface.co/datasets/incrediblecrab/us-federal-reserve-beige-book#how-it-stays-current).
+**Objective:** keep the dataset current with no personal device and no person, given a commit every 60 days. The workflow is scheduled at 14:00 UTC (9:00 EST, 10:00 EDT), and GitHub starts some runs late or [drops them](https://huggingface.co/datasets/incrediblecrab/us-federal-reserve-beige-book#how-it-stays-current).
 
 **Inputs:** the job's OIDC token, which Hugging Face exchanges for a short-lived write token when the dataset lists this repository and workflow as a Trusted Publisher; otherwise the run fails. No secret is used.
 

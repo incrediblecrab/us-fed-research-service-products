@@ -312,7 +312,7 @@ def test_the_schedule_is_what_the_code_and_card_say():
     _, triggers = load_workflow()
     assert [entry["cron"] for entry in triggers["schedule"]] == [card.SCHEDULE]
     text = card.render({})
-    assert f"scheduled at 00:00 and 12:00 UTC (`{card.SCHEDULE}`)" in text and card.SCHEDULE == "0 0,12 * * *"
+    assert f"scheduled daily at 14:00 UTC, 9:00 EST or 10:00 EDT (`{card.SCHEDULE}`)" in text and card.SCHEDULE == "0 14 * * *"
     assert not re.search(r"scheduled every|every hour at|minutes past|every 5 minutes|every 6 hours|once a week|weekly", text)
 
 
