@@ -3,7 +3,7 @@ requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "fed-research-service-products"
+name = "us-fed-research-service-products"
 version = "0.1.0"
 description = "Builds and keeps current a Hugging Face dataset of every edition of the Federal Reserve's Beige Book, one row per section."
 readme = "README.md"

@@ -1,4 +1,4 @@
-# fed-research-service-products
+# us-fed-research-service-products
 
 This repository builds and updates [federal-reserve-beige-book](https://huggingface.co/datasets/incrediblecrab/federal-reserve-beige-book), a public Hugging Face dataset of every edition of the Federal Reserve's Beige Book from May 1970 on. Each edition has one row for the national summary and one for each of the twelve districts, with text. The dataset card shows how much it holds and which sections no source serves.
 
