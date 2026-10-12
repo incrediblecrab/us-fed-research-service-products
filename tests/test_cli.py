@@ -251,7 +251,7 @@ def load_workflow():
 
 
 def test_the_only_workflow_is_the_one_checked_here():
-    assert sorted(path.name for path in WORKFLOWS.iterdir() if path.suffix in (".yml", ".yaml")) == ["pipeline.yml"]
+    assert sorted(path.name for path in WORKFLOWS.iterdir() if path.suffix in (".yml", ".yaml")) == ["pipeline.yml", "test.yml"]
 
 
 def test_the_workflow_calls_only_commands_options_and_outputs_the_cli_has(monkeypatch):
@@ -353,3 +353,13 @@ def test_inactivity_runs_on_every_schedule_and_fails_from_50_idle_days_without_c
     assert bool(errors) == fails
     assert all(f"No commit in {idle_days} days" in line and "60 days" in line for line in errors)
     assert git("log", "--format=%s", "main", cwd=origin).splitlines() == ["last change", "first change"]
+
+
+def test_the_test_workflow_runs_the_suite_and_cannot_publish():
+    workflow = yaml.safe_load((WORKFLOWS / "test.yml").read_text())
+    triggers = workflow.get("on", workflow.get(True))  # PyYAML reads the key `on` as True
+    assert set(triggers) == {"push", "pull_request"} and triggers["push"] == {"branches": ["main"]}
+    assert workflow["permissions"] == {"contents": "read"}
+    assert all("permissions" not in job for job in workflow["jobs"].values()), "no job widens the read-only token, and none asks for an OIDC token"
+    runs = [step["run"] for job in workflow["jobs"].values() for step in job["steps"] if "run" in step]
+    assert runs == ['pip install -q ".[test]"', "python -m pytest -q"]
