@@ -16,7 +16,7 @@ This repository builds and keeps current the public Hugging Face dataset `incred
 
 ## How it stays current
 
-`.github/workflows/pipeline.yml` runs at 14:00 UTC and publishes through Hugging Face Trusted Publishing with no stored token. GitHub disables schedules after 60 days without a commit; the workflow's `inactivity` job fails at 50 days to warn first and deliberately makes no keepalive commit, which GitHub treats as a Terms violation, so do not add one.
+`.github/workflows/pipeline.yml` runs at 09:37 UTC, which GitHub starts about four hours late (`.github/workflows/README.md` has the measurement), and publishes through Hugging Face Trusted Publishing with no stored token. GitHub disables schedules after 60 days without a commit; the workflow's `inactivity` job fails at 50 days to warn first and deliberately makes no keepalive commit, which GitHub treats as a Terms violation, so do not add one.
 
 ## Structure
 
